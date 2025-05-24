@@ -83,10 +83,10 @@ Below we present the main results for our Orsta models, focusing on training dyn
 
 We are committed to sharing our work with the community and plan to release additional components over time. Here's our current plan:
 
-- [x] 📄 **Technical Report** (Released: May 23, 2025)
-- [ ] 🤗 **Model Weights** (Coming Soon)
 - [ ] 🚀 **Getting Started Guide** (Coming Soon)
-- [ ] 📊 **Training Data** (Coming Soon)
 - [ ] 💻 **V-Triune Code** (Coming Soon)
+- [ ] 📊 **Training Data** (Coming Soon)
+- [ ] 🤗 **Model Weights** (Coming Soon)
+- [x] 📄 **Technical Report** (Released: May 23, 2025)
 
 We are working hard to make these available. Stay tuned for further updates!
