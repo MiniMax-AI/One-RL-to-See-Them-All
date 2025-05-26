@@ -59,7 +59,7 @@ What makes V-Triune and Orsta stand out:
 * **Open & Accessible 🌐**: Both the V-Triune system and the high-performance Orsta models are publicly available, encouraging further research and development in VLM training.
 ## News
 
-* **[2025/05/23]** 🎉 We are excited to release our technical report! You can read the paper [here](./MiniMax-One-RL-to-See-Them-All-v250523.pdf).
+* **[2025/05/23]** 🎉 We are excited to release our technical report! You can read the paper [here](https://arxiv.org/abs/2505.18129).
 
 ## Main Results
 
