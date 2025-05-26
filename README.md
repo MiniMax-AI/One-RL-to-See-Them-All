@@ -11,13 +11,13 @@
   <a href="./MiniMax-One-RL-to-See-Them-All-v250523.pdf" target="_blank" style="margin: 2px;">
   <img alt="Paper PDF" src="https://img.shields.io/badge/📖_Paper-PDF-327DE6?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
 </a>
-<a href="https://arxiv.org/" target="_blank" style="margin: 2px;">
+<a href="https://arxiv.org/abs/2505.18129" target="_blank" style="margin: 2px;">
   <img alt="Paper" src="https://img.shields.io/badge/📖_Paper-Arxiv-327DE6?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
 </a>
 <a href="https://huggingface.co/One-RL-to-See-Them-All" target="_blank" style="margin: 2px;">
   <img alt="Hugging Face" src="https://img.shields.io/badge/🤗_HF-Model-327DE6?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
 </a>
-<a href="https://huggingface.co/MiniMaxAI" target="_blank" style="margin: 2px;">
+<a href="https://huggingface.co/datasets/One-RL-to-See-Them-All/Orsta-Data-47k" target="_blank" style="margin: 2px;">
   <img alt="Hugging Face" src="https://img.shields.io/badge/🤗_HF-Data-327DE6?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
 </a>
 <a href="https://github.com/MiniMax-AI/One-RL-to-See-Them-All/blob/main/LICENSE" style="margin: 2px;">
@@ -86,7 +86,19 @@ We are committed to sharing our work with the community and plan to release addi
 - [ ] 🚀 **Getting Started Guide** (Coming Soon)
 - [ ] 💻 **V-Triune Code** (Coming Soon)
 - [ ] 📊 **Training Data** (Coming Soon)
-- [ ] 🤗 **Model Weights** (Coming Soon)
+- [x] 🤗 **Model Weights** (Released: May 25, 2025)
 - [x] 📄 **Technical Report** (Released: May 23, 2025)
 
 We are working hard to make these available. Stay tuned for further updates!
+
+
+## Citation
+Please cite our paper if you find our work helpful:
+```bibtex
+@article{ma2025one,
+      title={One RL to See Them All: Visual Triple Unified Reinforcement Learning}, 
+      author={Ma, Yan and Du, Linge and Shen, Xuyang and Chen, Shaoxiang and Li, Pengfei and Ren, Qibing and Ma, Lizhuang and Dai, Yuchao and Liu, Pengfei and Yan, Junjie},
+      journal={arXiv preprint arXiv:2505.18129},
+      year={2025}
+}
+```
