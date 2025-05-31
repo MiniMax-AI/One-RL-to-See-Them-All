@@ -8,7 +8,7 @@
 <hr>
 
 <div align="center" style="line-height: 1;">
-  <a href="./MiniMax-One-RL-to-See-Them-All-v250523.pdf" target="_blank" style="margin: 2px;">
+  <a href="./MiniMax-One-RL-to-See-Them-All-v250531.pdf" target="_blank" style="margin: 2px;">
   <img alt="Paper PDF" src="https://img.shields.io/badge/📖_Paper-PDF-327DE6?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
 </a>
 <a href="https://arxiv.org/abs/2505.18129" target="_blank" style="margin: 2px;">
