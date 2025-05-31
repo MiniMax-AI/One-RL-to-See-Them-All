@@ -1,0 +1,92 @@
+FROM nvcr.io/nvidia/pytorch:25.02-py3
+
+RUN apt-get update --fix-missing
+RUN apt-get install nano wget unzip curl zsh git bwm-ng htop rsync rclone openssh-server git-lfs iputils-ping -y
+RUN apt-get install ccache -y
+RUN apt-get clean
+
+# install zsh
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+RUN echo 'zsh' >> /root/.bashrc
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
+ENV TZ="Asia/Shanghai"
+
+RUN python3 -m pip install --upgrade pip
+
+ENV TORCH_CUDA_ARCH_LIST="8.0 8.6 9.0+PTX"
+
+RUN MAX_JOBS=32 pip install --no-cache-dir -v -U git+https://github.com/facebookresearch/xformers.git@v0.0.29.post1#egg=xformers
+
+# Install additional Python packages
+RUN pip install --no-cache-dir -U git+https://github.com/huggingface/transformers
+
+RUN pip install --no-cache-dir -U hydra-core==1.4.0.dev1 \
+    git+https://github.com/acherstyx/hydra-torchrun-launcher.git \
+    datasets \
+    tiktoken \
+    deepspeed \
+    accelerate \
+    sentencepiece \
+    boto3 \
+    einops \
+    packaging \
+    nvitop \
+    oss2 \
+    wandb \
+    pydantic \
+    jupyterlab \
+    isort \
+    TexSoup \
+    math-verify \
+    ninja \
+    psutil \
+    poetry \
+    colorlog \
+    qwen_vl_utils \
+    ipdb \
+    ipython
+
+RUN pip install --no-cache-dir -U triton==3.2.0 flashinfer-python
+RUN pip install --no-cache-dir -U pytest yapf py-spy liger-kernel torchdata
+
+RUN git clone https://github.com/Dao-AILab/flash-attention.git /flash-attention-hopper
+RUN cd /flash-attention-hopper/hopper && MAX_JOBS=32 python setup.py install
+RUN rm -rf /flash-attention-hopper
+
+
+RUN git clone https://github.com/vllm-project/vllm.git /vllm-latest && \
+    cd /vllm-latest && \
+    git checkout main
+
+RUN MAX_JOBS=32 cd /vllm-latest/ && \
+    python use_existing_torch.py && \
+    pip install -r requirements/build.txt && \
+    pip install -e . --no-build-isolation
+
+# Install development and testing tools
+RUN pip install -U ray[all]
+
+RUN pip install --no-cache-dir -U \
+    codetiming \
+    ruff \
+    dill \
+    peft \
+    IPython \
+    opencv-python \
+    fastapi \
+    hf-transfer \
+    codetiming \
+    'nvidia-ml-py>=12.560.30' \
+    'optree>=0.13.0' \
+    'pyarrow>=15.0.0' \
+    'pybind11' \
+    'pylatexenc' \
+    'tensordict==0.7.2' \
+    "qwen-vl-utils[decord]==0.0.8"
+
+ENV VLLM_WORKER_MULTIPROC_METHOD=spawn
+ENV DEBIAN_FRONTEND=noninteractive
+ENV NODE_OPTIONS=""
+ENV HF_HUB_ENABLE_HF_TRANSFER="1"

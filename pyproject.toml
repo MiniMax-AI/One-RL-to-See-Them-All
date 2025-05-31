@@ -1,0 +1,63 @@
+[project]
+name = "v-triune"
+version = "0.1.0"
+description = "Dependencies for the V-Triune System"
+requires-python = ">=3.12"
+
+dependencies = [
+    # Core Libraries & Frameworks
+    "transformers==4.51.1",
+    "hydra-core==1.4.0.dev1",
+    "vllm==0.8.5.post1",
+    "datasets",
+    "tiktoken",
+    "accelerate",
+    "sentencepiece",
+    "boto3",
+    "einops",
+    "packaging",
+    "oss2",
+    "wandb",
+    "pydantic",
+    "ninja",
+    "psutil",
+    "poetry",
+    "colorlog",
+    "ipdb",
+    "ipython",
+    "triton",
+    "liger-kernel",
+    "torchdata",
+    "ray[all]",
+    "peft",
+    "opencv-python",
+    "fastapi",
+    "uvicorn",
+    "sympy",
+    "openai",
+    "hf-transfer",
+    "nvidia-ml-py>=12.560.30",
+    "optree>=0.13.0",
+    "pyarrow>=15.0.0",
+    "pybind11",
+    "pylatexenc",
+    "tensordict",
+    "qwen-vl-utils[decord]",
+    "matplotlib",
+    "pycocotools",
+    # Utilities & Tools
+    "isort",
+    "TexSoup",
+    "math-verify",
+    "pytest",
+    "yapf",
+    "py-spy",
+    "codetiming",
+    "ruff",
+    "dill",
+]
+
+
+[tool.setuptools.packages.find]
+where = ["."]  # 表示在根目录查找
+include = ["verl*"]
